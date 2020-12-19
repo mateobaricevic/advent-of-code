@@ -158,7 +158,6 @@ for key, value in space.items():
 
 print(count)
 
-
 count = 0
 for w in hyperspace.keys():
     for z, value in hyperspace[w].items():
@@ -169,4 +168,3 @@ for w in hyperspace.keys():
         # print()
 
 print(count)
-
