@@ -42,20 +42,9 @@ for _ in range(2):
                     possibilities.append(c[0])
             if len(possibilities) == 1:
                 ingredients[possibilities[0]] = allergen
-                for f2 in foods:
-                    for i, a in enumerate(f2["allergens"]):
-                        if a == allergen:
-                            if i < len(f2["allergens"]):
-                                f2["allergens"] = f2["allergens"][0:i] + f2["allergens"][i+1:]
-                            else:
-                                f2["allergens"] = f2["allergens"][0:i]
-                for f2 in foods:
-                    for j, i in enumerate(f2["ingredients"]):
-                        if i == possibilities[0]:
-                            if j < len(f2["ingredients"]):
-                                f2["ingredients"] = f2["ingredients"][0:j] + f2["ingredients"][j+1:]
-                            else:
-                                f2["ingredients"] = f2["ingredients"][0:j]
+                for foo in foods:
+                    foo["allergens"] = list(filter(lambda x: x != allergen, foo["allergens"]))
+                    foo["ingredients"] = list(filter(lambda x: x != possibilities[0], foo["ingredients"]))
             # print(allergen, possibilities)
 
 # pprint.pprint(ingredients)
