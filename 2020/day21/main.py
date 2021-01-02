@@ -43,8 +43,8 @@ for _ in range(2):
             if len(possibilities) == 1:
                 ingredients[possibilities[0]] = allergen
                 for foo in foods:
-                    foo["allergens"] = list(filter(lambda x: x != allergen, foo["allergens"]))
-                    foo["ingredients"] = list(filter(lambda x: x != possibilities[0], foo["ingredients"]))
+                    foo["allergens"] = list(filter(lambda a: a != allergen, foo["allergens"]))
+                    foo["ingredients"] = list(filter(lambda i: i != possibilities[0], foo["ingredients"]))
             # print(allergen, possibilities)
 
 # pprint.pprint(ingredients)
