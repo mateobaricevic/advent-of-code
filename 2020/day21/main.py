@@ -13,7 +13,7 @@ for food in foods:
             ingredients[ingredient] = ''
 # print(ingredients)
 
-def countOccurances(list):
+def countOccurrences(list):
     result = []
     unique = set(list)
     for item in unique:
@@ -35,7 +35,7 @@ for _ in range(2):
                 if allergen in f["allergens"]:
                     possibilities += f["ingredients"]
                     count += 1
-            counts = countOccurances(possibilities)
+            counts = countOccurrences(possibilities)
             possibilities = []
             for c in counts:
                 if count == c[1]:
