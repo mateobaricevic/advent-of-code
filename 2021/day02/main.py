@@ -1,5 +1,4 @@
 # Part 1
-
 # commands = []
 # with open("2021/day02/input.txt", "r") as file:
 #   for line in file:
