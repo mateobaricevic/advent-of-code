@@ -29,7 +29,6 @@ while len(start_points) > 0:
   start = start_points.pop()
   end = end_points.pop()
   
-  # Part 1
   if start[0] == end[0]: # Horizontal
     increment(end)
     while start[1] < end[1]: # Down 0,0 -> 0,3
@@ -47,35 +46,6 @@ while len(start_points) > 0:
     while start[0] > end[0]: # Up 3,0 -> 0,0
       increment(start)
       start[0] -= 1
-  
-  # Part 2
-  elif start[0] < end[0] and start[1] < end[1]: # Diagonal \ Down 0,0 -> 3,3
-    increment(end)
-    while start[0] < end[0]:
-      increment(start)
-      start[0] += 1
-      start[1] += 1
-  
-  elif start[0] > end[0] and start[1] > end[1]: # Diagonal \ Up 3,3 -> 0,0
-    increment(end)
-    while start[0] > end[0]:
-      increment(start)
-      start[0] -= 1
-      start[1] -= 1
-  
-  elif start[0] < end[0] and start[1] > end[1]: # Diagonal / Down 0,3 -> 3,0
-    increment(end)
-    while start[0] < end[0]:
-      increment(start)
-      start[0] += 1
-      start[1] -= 1
-  
-  elif start[0] > end[0] and start[1] < end[1]: # Diagonal / Up 3,0 -> 0,3
-    increment(end)
-    while start[0] > end[0]:
-      increment(start)
-      start[0] -= 1
-      start[1] += 1
 
 # print_diagram()
 
@@ -86,4 +56,4 @@ for row in diagram:
       if column >= 2:
         count += 1
 
-print(f'There are {count} point(s) where at least two lines overlap.')
+print(count)
