@@ -50,7 +50,7 @@ def part_2():
                 full_image[i] = pixel
 
     for i, pixel in enumerate(full_image):
-        print('o' if pixel == '1' else ' ', end='')
+        print('O' if pixel == '1' else ' ', end='')
         if (i + 1) % length == 0:
             print()
 
