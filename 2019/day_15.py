@@ -199,13 +199,13 @@ if not exists(f"data/{path.stem}.json"):
         elif opcode == 4:  # Output
             if argument_1 == 0:  # Encountered wall
                 if direction == 1:  # Up
-                    screen[f"{x},{y-1}"] = "X"
+                    screen[f"{x},{y - 1}"] = "X"
                 elif direction == 2:  # Down
-                    screen[f"{x},{y+1}"] = "X"
+                    screen[f"{x},{y + 1}"] = "X"
                 elif direction == 3:  # Left
-                    screen[f"{x-1},{y}"] = "X"
+                    screen[f"{x - 1},{y}"] = "X"
                 elif direction == 4:  # Right
-                    screen[f"{x+1},{y}"] = "X"
+                    screen[f"{x + 1},{y}"] = "X"
             elif argument_1 == 1:  # Moved successfully
                 if screen[f"{x},{y}"] != "O":
                     screen[f"{x},{y}"] = " "
