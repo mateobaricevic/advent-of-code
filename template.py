@@ -1,10 +1,10 @@
-import argparse
-import pathlib
+from argparse import ArgumentParser
+from pathlib import Path
 
-path = pathlib.Path(__file__)
+path = Path(__file__)
 input_file = f'{path.parent}/inputs/{path.stem}.txt'
 
-parser = argparse.ArgumentParser()
+parser = ArgumentParser()
 parser.add_argument('-i', '--input', default=input_file)
 parser.add_argument('-p', '--part', type=int, choices=[1, 2], default=1)
 args = parser.parse_args()
