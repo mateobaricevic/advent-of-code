@@ -25,9 +25,9 @@ def part_1():
     calibration = 0
     operators = [add, mul]
     for value, arguments in equations:
-        for combination in product(operators, repeat=len(arguments) - 1):
+        for operations in product(operators, repeat=len(arguments) - 1):
             args = arguments.copy()
-            for i, operation in enumerate(combination):
+            for i, operation in enumerate(operations):
                 args[i + 1] = operation(args[i], args[i + 1])
             if args[-1] == value:
                 calibration += value
@@ -39,9 +39,9 @@ def part_2():
     calibration = 0
     operators = [add, mul, lambda x, y: int(str(x) + str(y))]
     for value, arguments in equations:
-        for combination in product(operators, repeat=len(arguments) - 1):
+        for operations in product(operators, repeat=len(arguments) - 1):
             args = arguments.copy()
-            for i, operation in enumerate(combination):
+            for i, operation in enumerate(operations):
                 args[i + 1] = operation(args[i], args[i + 1])
             if args[-1] == value:
                 calibration += value
