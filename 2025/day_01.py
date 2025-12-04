@@ -15,6 +15,7 @@ with open(args.input) as input_file:
     for line in lines:
         rotations.append({"direction": line[0], "amount": int(line[1:])})
 
+
 def part_1(rotations: list):
     position = 50
     password = 0

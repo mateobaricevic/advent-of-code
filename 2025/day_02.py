@@ -15,11 +15,12 @@ with open(args.input) as input_file:
     ranges = [r.split("-") for r in ranges]
     ids = []
     for r in ranges:
-        for i in range(int(r[0]), int(r[1])+1):
+        for i in range(int(r[0]), int(r[1]) + 1):
             ids.append(i)
 
+
 def part_1(ids: list):
-    pattern = re.compile(r'^(\d+)\1$')
+    pattern = re.compile(r"^(\d+)\1$")
     invalid_ids = []
     for id in ids:
         invalid = bool(pattern.match(str(id)))
@@ -29,7 +30,7 @@ def part_1(ids: list):
 
 
 def part_2(ids: list):
-    pattern = re.compile(r'^(\d+)\1+$')
+    pattern = re.compile(r"^(\d+)\1+$")
     invalid_ids = []
     for id in ids:
         invalid = bool(pattern.match(str(id)))
