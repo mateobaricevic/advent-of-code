@@ -18,20 +18,20 @@ with open(args.input) as input_file:
 
 def part_1(diagram: list):
     def simulate(start):
-        active = {start}
+        current = {start}
         splits = 0
-        while active:
-            new_active = set()
-            for row, column in active:
-                if row + 1 >= len(diagram):
+        while current:
+            new = set()
+            for row, column in current:
+                if row + 1 == len(diagram):
                     continue
                 if diagram[row + 1][column] in [".", "S"]:
-                    new_active.add((row + 1, column))
+                    new.add((row + 1, column))
                 elif diagram[row + 1][column] == "^":
                     splits += 1
-                    new_active.add((row + 1, column - 1))
-                    new_active.add((row + 1, column + 1))
-            active = new_active
+                    new.add((row + 1, column - 1))
+                    new.add((row + 1, column + 1))
+            current = new
         return splits
 
     return simulate((0, floor(len(diagram[0]) / 2)))
@@ -45,7 +45,7 @@ def part_2(diagram: list):
         while current:
             new = defaultdict(int)
             for (row, column), count in current.items():
-                if row + 1 >= len(diagram):
+                if row + 1 == len(diagram):
                     total_exited += count
                     continue
                 if diagram[row + 1][column] in [".", "S"]:
