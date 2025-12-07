@@ -53,8 +53,6 @@ def part_2(diagram: list):
                 elif diagram[row + 1][column] == "^":
                     new[(row + 1, column - 1)] += count
                     new[(row + 1, column + 1)] += count
-                else:
-                    total_exited += count
             current = new
         return total_exited
 
