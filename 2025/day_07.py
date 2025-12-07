@@ -41,12 +41,12 @@ def part_2(diagram: list):
     def simulate(start):
         current = defaultdict(int)
         current[start] = 1
-        total_exited = 0
+        timelines = 0
         while current:
             new = defaultdict(int)
             for (row, column), count in current.items():
                 if row + 1 == len(diagram):
-                    total_exited += count
+                    timelines += count
                     continue
                 if diagram[row + 1][column] in [".", "S"]:
                     new[(row + 1, column)] += count
@@ -54,7 +54,7 @@ def part_2(diagram: list):
                     new[(row + 1, column - 1)] += count
                     new[(row + 1, column + 1)] += count
             current = new
-        return total_exited
+        return timelines
 
     return simulate((0, floor(len(diagram[0]) / 2)))
 
